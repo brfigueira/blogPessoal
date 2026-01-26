@@ -1,0 +1,37 @@
+### Listar autores
+GET http://localhost:8080/autores
+
+###
+
+### Criar autor
+POST http://localhost:8080/autores
+Content-Type: application/json
+
+{
+  "nome": "Breno Dias",
+  "email": "brenodias@gmail.com",
+  "senha": "mariajose123"
+}
+
+###
+
+### Criar tema
+POST http://localhost:8080/temas
+Content-Type: application/json
+
+{
+  "descricao": "Tecnologia"
+}
+
+###
+
+### Criar postagem
+POST http://localhost:8080/postagens
+Content-Type: application/json
+
+{
+  "titulo": "Primeiro Post",
+  "texto": "Este é meu primeiro post no Blog Pessoal",
+  "autor": { "id": 1 },
+  "tema": { "id": 1 }
+}
