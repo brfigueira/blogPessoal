@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background: #f4f6f9;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    min-height: calc(100vh - 120px);
+    padding: 24px;
+}
+
+.header, .footer {
+    background: #1f2933;
+    color: #e5e7eb;
+}
