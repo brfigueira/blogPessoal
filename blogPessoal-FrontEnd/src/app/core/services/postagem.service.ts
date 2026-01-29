@@ -1,29 +1,42 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
 import { Postagem } from '../models/postagem.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class PostagemService {
-    private api = environment.apiUrl + '/postagens';
 
-    constructor(private http: HttpClient) {}
+  private apiUrl = 'http://localhost:8080/postagens';
 
-    listar() {
-        return this.http.get<Postagem[]>(this.api);
-    }
+  constructor(private http: HttpClient) {}
 
-    criar(postagem: Postagem) {
-        return this.http.post(this.api, postagem);
-    }
+  /*
+    Lista todas as postagens
+  */
+  listar(): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(this.apiUrl);
+  }
 
-    atualizar(postagem: Postagem) {
-        return this.http.put(this.api, postagem);
-    }
+  /*
+    Cria nova postagem
+  */
+  cadastrar(postagem: Postagem): Observable<Postagem> {
+    return this.http.post<Postagem>(this.apiUrl, postagem);
+  }
 
-    deletar(id: number) {
-        return this.http.delete(`${this.api}/${id}`)
-    }
+  /*
+    Atualiza postagem
+  */
+  atualizar(postagem: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>(this.apiUrl, postagem);
+  }
+
+  /*
+    Remove postagem
+  */
+  deletar(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

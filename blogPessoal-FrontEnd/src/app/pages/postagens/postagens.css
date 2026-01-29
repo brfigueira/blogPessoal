@@ -1,0 +1,78 @@
+/* ===== POSTAGENS ===== */
+
+.postagens-container {
+  min-height: calc(100vh - 128px);
+  background: #020617;
+  padding: 2rem;
+}
+
+.postagem-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.postagem-card:hover {
+  transform: translateY(-4px);
+}
+
+.postagem-card h3 {
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.postagem-card p {
+  color: #cbd5f5;
+  line-height: 1.5;
+}
+
+.postagem-card small {
+  display: block;
+  margin-top: 1rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.postagem-acoes {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.postagem-acoes button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-editar {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.btn-editar:hover {
+  background: #0ea5e9;
+}
+
+.btn-deletar {
+  background: #ef4444;
+  color: #020617;
+}
+
+.btn-deletar:hover {
+  background: #dc2626;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .postagens-container {
+    padding: 1rem;
+  }
+}

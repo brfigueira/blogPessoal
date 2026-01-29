@@ -1,0 +1,26 @@
+header {
+  background: linear-gradient(90deg, #020617, #1e293b);
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: #e0e7ff;
+  font-size: 1.4rem;
+}
+
+a {
+  color: #c7d2fe;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #60a5fa;
+}
