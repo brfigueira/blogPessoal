@@ -1,0 +1,44 @@
+<h2>Criar Postagem</h2>
+
+<form (ngSubmit)="publicar()">
+
+  <label>Título</label>
+  <input
+    type="text"
+    [(ngModel)]="postagem.titulo"
+    name="titulo"
+    required
+  />
+
+  <label>Texto</label>
+  <textarea
+    [(ngModel)]="postagem.texto"
+    name="texto"
+    required
+  ></textarea>
+
+  <label>Autor</label>
+  <select
+    [(ngModel)]="postagem.autor"
+    name="autor"
+    required
+  >
+    <option *ngFor="let autor of autores" [ngValue]="autor">
+      {{ autor.nome }}
+    </option>
+  </select>
+
+  <label>Tema</label>
+  <select
+    [(ngModel)]="postagem.tema"
+    name="tema"
+    required
+  >
+    <option *ngFor="let tema of temas" [ngValue]="tema">
+      {{ tema.descricao }}
+    </option>
+  </select>
+
+  <button type="submit">Publicar</button>
+
+</form>
